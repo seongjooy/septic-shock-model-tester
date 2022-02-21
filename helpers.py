@@ -62,9 +62,6 @@ def save_model_valid_input(value):
         pass
     if value == 'n':
         pass
-    else:
-        save_model_valid_input(input('Invalid Input.\n Save model as a joblib file? y/n\n'))
-
 
 # ask for input and check for error
 def save_model(model, value):

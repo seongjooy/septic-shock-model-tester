@@ -40,7 +40,7 @@ print(train_balanced.columns, test_balanced.columns)
 
 # 5-fold validation
 skFold = StratifiedKFold(n_splits=5,
-                         random_state=123)
+                         random_state=123, shuffle=True)
 
 X_train_kf, y_train_kf = train_balanced.drop(['dlabel'], axis=1), \
                          train_balanced['dlabel']
@@ -106,7 +106,5 @@ print(f'Best set by AUC: {best_idx + 1}\n'
       f'AUC: {round(best_AUC, 3)}\n'
       f'{best_report}')
 
-print(y_test_pred, len(y_test_pred))
-print(X_test, len(X_test))
 
 helpers.save_model(xgb_model, save)
